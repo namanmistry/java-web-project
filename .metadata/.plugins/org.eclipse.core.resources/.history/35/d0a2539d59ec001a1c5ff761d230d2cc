@@ -1,0 +1,66 @@
+package com.main;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/edit")
+public class edit extends HttpServlet {
+	
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	int id=Integer.parseInt(request.getParameter("id"));
+	String postContent[]=new String[13];
+
+	for(int i=1;i<=10;i++) {
+		postContent[i-1]=request.getParameter("content"+i);
+	}
+	postContent[10]=request.getParameter("title");
+	postContent[11]=request.getParameter("slug");
+	postContent[12]=request.getParameter("id");
+	String sql="insert into posts(?,?,?,?,?,?,?,?,?,?,?,?)";
+
+	try {
+		//Connecting to database
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/technicalblogs" ,"root" ,"");
+		PreparedStatement pstm = con.prepareStatement(sql);
+		pstm.setString(1,0);
+		pstm.setString(2, x);
+		pstm.setString(3, x);
+		pstm.setString(4, x);
+		pstm.setString(5, x);
+		pstm.setString(6, x);
+		pstm.setString(7, x);
+		pstm.setString(8, x);
+		pstm.setString(9, x);
+		pstm.setString(10, x);
+		pstm.setString(11, x);
+		pstm.setString(12, x);
+		int rs = pstm.executeUpdate();
+		
+		
+		
+	
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+
+	}
+	
+	}
+
+

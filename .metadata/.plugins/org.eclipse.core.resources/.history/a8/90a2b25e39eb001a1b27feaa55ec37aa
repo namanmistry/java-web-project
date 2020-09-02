@@ -1,0 +1,35 @@
+ 
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+  <%@ page import="java.sql.*"%>
+    <%@ page import="java.io.*"%>
+    <html>
+    <%
+    try 
+    {
+        String EmpFirstName;
+        String EmpSurname;
+        String EmpId;
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con =  DriverManager.getConnection("jdbc:mysql://localhost/try","root","root");
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("select employee_id,first_name,surname from employee");
+        while (rs.next()) 
+        {
+            EmpFirstName = rs.getString("first_name");
+            EmpSurname = rs.getString("surname");
+            EmpId = rs.getString("EmpId");
+            <DIV><%=EmpFirstName5> <%=Surname%> </DIV>
+            <img src="http://localhost/GetImage.jsp?empId=<%=EmpId%>" />
+        }
+        rs.close();
+        stmt.close();
+        con.close();
+    } 
+    catch (Exception e) 
+    {
+        out.println(e.Message);
+        return;
+    } 
+    %>
+    </html>

@@ -1,0 +1,14 @@
+package com;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class home extends HttpServlet{
+
+	public void doGet(HttpServletRequest req,HttpServletResponse res) {
+		
+		RequestDispatcher rd=req.getRequestDispatcher("home");
+	}
+}

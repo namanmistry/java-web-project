@@ -1,0 +1,36 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ Page import="java.sql.*" %>
+    <%@ Page import="java.io.*" %>
+
+    <html>
+    <%
+    byte[] imgData = null;
+    try 
+    {
+        Class.forName("com.mysql.jdbc.Driver");
+        con =DriverManager.getConnection("jdbc:mysql://localhost/try","root","root");
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("select photo from employee where employee_id=" + request.getParameter("empId"));
+        while (rs.next()) 
+        {
+            Blob image = rs.getBlob(1);
+            imgData = image.getBytes(1,(int)image.length());
+        }
+        response.setContentType("image/png");
+        OutputStream o = response.getOutputStream();
+        o.flush();
+        o.close();
+        rs.close();
+        stmt.close();
+        con.close();
+    } 
+    catch (Exception e) 
+    {
+        out.println("Unable To Display image");
+        out.println("Image Display Error=" + e.getMessage());
+        return;
+    } 
+    %>
+    </html>
