@@ -4,6 +4,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="Header.jsp" %>
 <!-- ======= Header ======= -->
+<% response.setHeader("Cache-Control" ,"no-cache ,no-store ,must-revalidate"); // HTTP 1.1
+		response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+		response.setHeader("Expires" ,"0"); // Proxies
+		if(session.getAttribute("username")==null){
+			response.sendRedirect("login.jsp");
+		}
+		%>
+
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
@@ -24,6 +32,7 @@
 
 
 <section style="padding-top: 100px;">
+
 <div class="container" data-aos="fade-down">
     
     <hr>
@@ -35,7 +44,7 @@
             </div>
         </div>
     </form>
-    <form action="logout" method="post">
+    <form action="logout" >
         <div class="clearfix">
             <div class="col-md-6 mx-auto">
                 <button class="btn btn-block text-center" style="background-color: #5f86cf;" type="submit">Log-Out</button>

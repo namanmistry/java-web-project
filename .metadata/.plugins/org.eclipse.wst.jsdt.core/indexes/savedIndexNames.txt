@@ -4,6 +4,5 @@ INDEX VERSION 1.4+D:\projects\java\java web\.metadata\.plugins\org.eclipse.wst.j
 2815949738.index
 2684256856.index
 3910779213.index
-2815949738.index
 3236615258.index
 4099177726.index

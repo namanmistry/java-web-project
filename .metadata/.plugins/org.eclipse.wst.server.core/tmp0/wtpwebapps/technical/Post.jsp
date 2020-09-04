@@ -44,25 +44,25 @@ where id='${num}';</sql:query>
           <div class="col-lg-8">
           <c:forEach items="${rs.rows}" var="post">
             <h3>${post.title}</h3>
-             <img src="/TechnicalBlogs_2.0/image?id=1&post=<c:out value="${post.id}"/>" height="600" width="1000">
+          
              ${post.content1}
-             <img src="/TechnicalBlogs_2.0/image?id=2&post=<c:out value="${post.id}"/>" height="600" width="1000">
+             
              ${post.content2}
-             <img src="/TechnicalBlogs_2.0/image?id=3&post=<c:out value="${post.id}"/>" height="600" width="1000">
+   
              ${post.content3}
-             <img src="/TechnicalBlogs_2.0/image?id=4&post=<c:out value="${post.id}"/>" height="600" width="1000">
+            
              ${post.content4}
-             <img src="/TechnicalBlogs_2.0/image?id=5&post=<c:out value="${post.id}"/>" height="600" width="1000">
+       
              ${post.content5}
-             <img src="/TechnicalBlogs_2.0/image?id=6&post=<c:out value="${post.id}"/>" height="600" width="1000">
+           
              ${post.content6}
-             <img src="/TechnicalBlogs_2.0/image?id=7&post=<c:out value="${post.id}"/>" height="600" width="1000">
+
              ${post.content7}
-             <img src="/TechnicalBlogs_2.0/image?id=8&post=<c:out value="${post.id}"/>" height="600" width="1000">
+             
              ${post.content8}
-             <img src="/TechnicalBlogs_2.0/image?id=9&post=<c:out value="${post.id}"/>" height="600" width="1000">
+             
              ${post.content9}
-             <img src="/TechnicalBlogs_2.0/image?id=10&post=<c:out value="${post.id}"/>" height="600" width="1000">
+           
              ${post.content10}
             
              <h3>${post.likes}</h3><br>
